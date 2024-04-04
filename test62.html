@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    n1<input type="number" id="num1">
+    n2<input type="number" id="num2">
+    <button type="button" id="button" onclick="seq()">result</button>
+    <div id="res"></div>
+
+    <script>
+        function seq(){
+            let num1=Number(document.getElementById('num1').value);
+            let num2=Number(document.getElementById('num2').value);
+            let result="";
+            for(let i=num1;i<=num2;i++){
+                result=result+i+" "+num2+" ";
+                num2=num2-1;
+            }
+            document.getElementById('res').innerHTML=result;
+        }
+    
+    </script>
+</body>
+
+</html>

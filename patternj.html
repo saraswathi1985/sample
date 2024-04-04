@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="outputId"></p>
+    <script>
+        let rowcount=15;
+        let colcount=11;
+        let answer = ' ';
+        for(let row=1;row<=rowcount;row++)
+        {
+            for(let col=1;col<=colcount;col++)
+            {
+                if( (row==1 || row==2 || row==3) && (col==1 || col==2 || col==3 || col==4 || col==5 || col==6 || col==7 || col==8 || col==9 || col==10 || col==11) || ((row==4 || row==5 || row==6 || row==7 || row==8 || row==9) && (col==5 || col==6 || col==7)) ||((row==10 || row==11 || row==12) && (col==1 || col==2 || col==3) && (col==5 || col==6 || col==7)) || ((row=13) && (col=1 || col==2 || col==3 || col==4 || col==5 || col==6 ||col==7)) || ((row=14) &&  (col==2 || col==3 || col==4 || col==5 || col==6)) || ((row=15) && (col==3 || col==4 || col==5)))
+                {    
+                answer += "*";
+                }
+                else
+                {
+                    answer += "&nbsp ";
+                }
+            }
+            answer += "<br>";
+        document.getElementById('outputId').innerHTML = answer;  
+    }
+    </script>
+</body>
+</html>

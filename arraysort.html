@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function arraysort(arr){
+            let temp=0;
+        for(let i=0;i<arr.length;i++)
+        {
+        for(let j=i+1;j<arr.length;j++)
+        {
+        if(arr[i]>arr[j])
+        { 
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+        }
+        }
+    }
+        console.log(arr);
+        }arraysort([23,5,7,45]);
+        arraysort([56,89,107,5,6,89,2,3,1,507]);
+        arraysort([1028,798,345,32,22,10498]);
+    </script>
+</body>
+</html>

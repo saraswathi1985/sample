@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shiftunshiftincludesslice</title>
+</head>
+<body>
+    <script>
+   function arrshift(arr)
+   {
+    let removedele=arr[0];
+   let  newarr=[];
+    for(let idx=0;idx<arr.length-1;idx++)
+    {
+        newarr[idx]=arr[idx+1];
+    }
+    console.log(removedele);
+    console.log("Newarr:",newarr);
+    console.log("New length:" ,newarr.length);
+}arrshift([2,3,4,5,6]);
+//shift
+function arrsshift(arr) 
+{
+    let result="";
+let newArr=[];
+for(let idx=1;idx<arr.length;idx++)
+{
+    newArr[idx-1]=arr[idx];
+}return result;}
+//unshift
+function arrunshift(arr,ele)
+{
+    let newArr=[ele];
+    for(let idx=0;idx<arr.length;idx++)
+    {
+        newArr[idx+1]=arr[idx];
+    }
+    console.log("New array:", newArr);
+    console.log("New length:", newArr.length);
+}   arrunshift([2,3,4,5,6],7)
+//include
+function arrInclude(arr,srcEle) {
+    let result=false;
+    for(let idx=0;idx<arr.length;idx++){
+    if(arr[idx]==srcEle){
+        return true;
+    }
+}  return result;
+    }console.log(arrInclude([1,2,3,4,5],3));
+//slice
+function arrSlice(arr,start,finish)
+{
+    newArr=[];
+    let newIdx=0;
+    for(idx=start;idx<finish;idx++)
+    {
+        newArr[newIdx]=arr[idx];
+        newIdx++;
+    }
+    return newArr;
+}console.log(arrSlice([1,2,3,4,5],2,4));
+   </script> 
+</body>
+</html>

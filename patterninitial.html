@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            line-height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="outputId"></p>
+    <script>
+        let rowcount=10;
+        let colcount=6;
+        let answer ='';
+        for(let row=1; row<=rowcount; row++)
+        {
+            
+            for(let col=1; col<=colcount; col++)
+            {
+                if ((row == 3 || row == 4) && (col == 1 || col == 2) || row == 1 || row == 2 || row == 5 || row == 6 || (row == 7 || row == 8) && (col == 5 || col == 6) || row == 9 || row == 10) {
+                    answer += "*";
+                } else {
+                    answer += "&nbsp "
+                }
+            }
+            answer += "<br>";
+    
+            //     if(row==1||row==2||row==5||row==6||row==9||row==10)
+            //     {
+            //         if(col==1||col==2||col==3||col==4||col==5||col==6){
+            //             answer += '*';
+            //     }
+            //     }     
+               
+            //     else if((row==3||row==4)&&(col==1||col==2))
+            //     {
+            //         console.log('*');
+            //     }
+            //     else if((row==7||row==8)&&(col==5||col==6))
+            //     {
+            //         console.log('*');
+            //     }
+            // }
+            document.getElementById('outputId').innerHTML = answer;
+        }
+    </script>
+</body>
+</html>

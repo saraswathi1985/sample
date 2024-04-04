@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traffic signal</title>
+</head>
+<body>
+   
+    
+ 
+    <h2>Traffic Signal</h2>
+ 
+<div class="row mt-4 mb-4">
+    <h2>Traffic Signal</h2>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col road verticalRoad">
+            <div class="row">
+                <div class="col northSouthLeftLane" id="northLeft"> North Left</div>
+                <div class="col northSouthRightLane" id="northRight"> North Right</div>
+            </div>                
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col road horizontalRoad">
+            <div class="row westEastTopLane" id="westRight"> West Right</div>
+            <div class="row westEastBottomLane" id="westLeft"> West Left</div>
+        </div>
+        <div class="col pt-4">
+            <div class="row mt-4">
+                <div class="col"></div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="signalSystem('north')" id="northBtn">North</button></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mt-4 pl-4">
+                <div class="col"><button type="button" class="btn btn-secondary" onclick="signalSystem('west')" id="westBtn">West</button></div>
+                <div class="col"></div>
+                <div class="col"><button type="button" class="btn btn-secondary" onclick="signalSystem('east')" id="eastBtn">East</button></div>
+            </div>
+            <div class="row mt-4">
+                <div class="col"></div>
+                <div class="col"><button type="button" class="btn btn-secondary" onclick="signalSystem('south')" id="southBtn">South</button></div>
+                <div class="col"></div>
+            </div>
+        </div>
+        <div class="col road horizontalRoad">
+            <div class="row westEastTopLane" id="eastLeft"> East Left</div>
+            <div class="row westEastBottomLane" id="eastRight"> East Right</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col road verticalRoad">
+            <div class="row">
+                <div class="col northSouthLeftLane" id="southLeft"> South Left</div>
+                <div class="col northSouthRightLane" id="southRight"> South Right</div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <script>
+        function signalSystem(signalDir){
+
+            let northLeft = document.getElementById('northLeft').style;
+            let northRight = document.getElementById('northRight').style;
+            let southLeft = document.getElementById('southLeft').style;
+            let southRight = document.getElementById('southRight').style;
+            let westLeft = document.getElementById('westLeft').style;
+            let westRight = document.getElementById('westRight').style;
+            let eastLeft = document.getElementById('eastLeft').style;
+            let eastRight = document.getElementById('eastRight').style;
+            let northBtn = document.getElementById('northBtn');
+            let southBtn = document.getElementById('southBtn');
+            let eastBtn = document.getElementById('eastBtn');
+            let westBtn = document.getElementById('westBtn');
+            
+
+            //set default
+            northLeft.backgroundColor = "green";
+            northRight.backgroundColor = "green";
+            southLeft.backgroundColor = "green";
+            southRight.backgroundColor = "green";
+            eastLeft.backgroundColor = "green";
+            eastRight.backgroundColor = "green";
+            westLeft.backgroundColor = "green";
+            westRight.backgroundColor = "green";
+            northBtn.className = "btn btn-danger";
+            southBtn.className = "btn btn-danger";
+            eastBtn.className = "btn btn-danger";
+            westBtn.className = "btn btn-danger";
+
+
+            console.log(document.getElementById('northBtn').classList);
+            console.log(northBtn);
+
+            switch(signalDir){
+                case "north":
+                    westRight.backgroundColor="red";
+                    eastRight.backgroundColor="red";
+                    southLeft.backgroundColor="red";
+                    northBtn.className = "btn btn-success";
+                    break;
+                case "south":
+                    westRight.backgroundColor="red";
+                    eastRight.backgroundColor="red";
+                    northRight.backgroundColor="red";
+                    southBtn.className = "btn btn-success";
+                    break;
+                case "east": 
+                    westRight.backgroundColor="red";
+                    southLeft.backgroundColor="red";
+                    northRight.backgroundColor="red";
+                    eastBtn.className = "btn btn-success";
+                    break;
+                case "west": 
+                    northRight.backgroundColor="red";
+                    eastRight.backgroundColor="red";
+                    southLeft.backgroundColor="red";
+                    westBtn.className = "btn btn-success";
+                    break;
+                default:
+                    console.log("Invalid Option");
+            }
+        }
+    </script>
+    <style>
+        .northSouthLeftLane{
+            border-right-style: dotted;
+            border-right-color: white;
+            border-right-width: 2px;
+            height: 400px;
+            width:50%;
+        }
+        .northSouthRightLane{
+            height: 400px;
+        }
+        .westEastTopLane{
+            border-bottom-style: dotted;
+            border-bottom-color: white;
+            border-bottom-width: 2px;
+            width: 430px;
+            height:50%;
+        }
+        .westEastBottomLane{
+            width:430px;
+            height:50%;
+        }
+        .road{
+            border: solid 2px black;
+            background-color: black;
+            color:white;
+        }
+        .verticalRoad{
+            width:100px;
+            height: 400px;
+        }
+        .horizontalRoad{
+            width:400px;
+            height: 300px;
+        }
+    </style>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padstarts</title>
+</head>
+<body>
+    <script>
+        function padStarts(str,size,fillelemet){
+
+            let result="";
+            let strlen=str.length;
+            let fill=size-strlen;
+            if(size<strlen){
+                strlen=size;
+            }
+            for(let idx=0;idx<strlen;idx++){
+                result=result+str[idx];
+            }
+            for(let idx1=0;idx1<fill;idx1++){
+                result=fillelemet+result;
+            }
+            console.log(result);
+            document.getElementById('res').innerHTML="padStart: "+result;
+        }
+        padStarts("hello",10,"@")
+    </script>
+</body>
+</html>

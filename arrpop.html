@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        function arrpop(arr)
+        {
+            let newarr=[];
+            let len=arr.length-1;
+            for(let idx=0;idx<len;idx++)
+            {
+                newarr [idx]=arr[idx];
+            }
+            return newarr;
+            
+        } console.log(arrpop([5,3,2,6,7]));
+        // arrIndexof
+        function arrIndexof(arr,srEle)
+        {
+            console.log(arr);
+            let eleIndex=-1;
+            for(let idx=0;idx<arr.length;idx++)
+            {
+                if(srEle==arr[idx])
+                {
+                    eleIndex=idx;
+                    break;
+                }
+            }
+            return eleIndex;
+        }
+        console.log(arrIndexof([5,4,8,6,7,5],5));
+        //arrlastindexof
+        function arrLastIndexof(arr,srEle)
+        {
+            console.log(arr);
+            for(let idx=arr.length-1;idx>=0;idx--)
+            {
+                if(srEle==arr[idx]){
+                    return idx;
+                }
+            }
+            return -1;
+     }
+     console.log(arrLastIndexof([1,4,5,8,6,7],5))
+    </script>
+</body>
+</html>
